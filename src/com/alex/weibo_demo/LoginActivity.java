@@ -36,21 +36,15 @@ public class LoginActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mWeibo = Weibo.getInstance(CONSUMER_KEY, REDIRECT_URL);
-        ImageView mloginButton = (ImageView) findViewById(R.id.login_button);
-        mloginButton.setOnClickListener(new OnClickListener(){
-
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				mWeibo.authorize(LoginActivity.this, new AuthDialogListener());				
-			}
-        	
-        });
 		LoginActivity.accessToken=AccessTokenKeeper.readAccessToken(this);
         if(LoginActivity.accessToken.isSessionValid()){
         	Weibo.isWifi=Utility.isWifi(this);
             try {
                 Class sso=Class.forName("com.weibo.sdk.android.api.WeiboAPI");//如果支持weiboapi的话，显示api功能演示入口按钮
-                setContentView(R.layout.activity_main);
+                Intent intent=new Intent();
+                intent.setClass(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+//                setContentView(R.layout.activity_main);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
                 Log.i(TAG, "com.weibo.sdk.android.api.WeiboAPI not found");
@@ -59,7 +53,22 @@ public class LoginActivity extends Activity{
             String date = new java.text.SimpleDateFormat("yyyy/MM/dd hh:mm:ss").format(new java.util.Date(LoginActivity.accessToken.getExpiresTime()));
             Log.v(TAG,"access_token 仍在有效期内,无需再次登录: \naccess_token:"+ LoginActivity.accessToken.getToken() + "\n有效期："+date);
         }
-        Log.v(TAG,"oncreate ");
+        else
+        {
+        	 Log.v(TAG,"miss access token");
+             ImageView mloginButton = (ImageView) findViewById(R.id.login_button);
+             mloginButton.setVisibility(0);
+             mloginButton.setOnClickListener(new OnClickListener(){
+
+     			public void onClick(View v) {
+     				// TODO Auto-generated method stub
+     				mWeibo.authorize(LoginActivity.this, new AuthDialogListener());				
+     			}
+             	
+             });
+        	 
+        }
+       
     }
 	class AuthDialogListener implements WeiboAuthListener {
 
@@ -73,7 +82,10 @@ public class LoginActivity extends Activity{
 				Log.v(TAG,"认证成功: \r\n access_token: "+ token + "\r\n" + "expires_in: " + expires_in+"\r\n有效期："+date);
 				try {
 	                Class sso=Class.forName("com.weibo.sdk.android.api.WeiboAPI");//如果支持weiboapi的话，显示api功能演示入口按钮
-	                setContentView(R.layout.activity_main);
+//	                setContentView(R.layout.activity_main);
+	                Intent intent=new Intent();
+	                intent.setClass(LoginActivity.this, MainActivity.class);
+	                startActivity(intent);
 	            } catch (ClassNotFoundException e) {
 	                e.printStackTrace();
 	                Log.i(TAG, "com.weibo.sdk.android.api.WeiboAPI not found");
