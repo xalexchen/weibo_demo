@@ -11,6 +11,7 @@
         android1:layout_alignParentLeft="true"
         android1:layout_below="@+id/imageView11"
         android1:layout_marginTop="50dp"
+        android1:clickable="false"
         android1:src="@drawable/ic_tab_home_nor" />
 
     <ImageView

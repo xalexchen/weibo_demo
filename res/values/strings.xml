@@ -4,5 +4,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">weibo</string>
+    <color name="home_color">#677481</color>
 
 </resources>
