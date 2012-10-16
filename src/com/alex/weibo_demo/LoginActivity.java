@@ -43,6 +43,7 @@ public class LoginActivity extends Activity{
                 Class sso=Class.forName("com.weibo.sdk.android.api.WeiboAPI");//如果支持weiboapi的话，显示api功能演示入口按钮
                 Intent intent=new Intent();
                 intent.setClass(LoginActivity.this, MainActivity.class);
+                finish();
                 startActivity(intent);
 //                setContentView(R.layout.activity_main);
             } catch (ClassNotFoundException e) {
@@ -85,6 +86,7 @@ public class LoginActivity extends Activity{
 //	                setContentView(R.layout.activity_main);
 	                Intent intent=new Intent();
 	                intent.setClass(LoginActivity.this, MainActivity.class);
+	                finish();
 	                startActivity(intent);
 	            } catch (ClassNotFoundException e) {
 	                e.printStackTrace();
