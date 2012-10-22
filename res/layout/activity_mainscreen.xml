@@ -6,6 +6,7 @@
     android:orientation="horizontal" >
 
     <include
+        android:id="@+id/menusilde"
         android:layout_width="wrap_content"
         android:layout_height="704dp"
         android:layout_marginLeft="5dp"
@@ -17,9 +18,16 @@
         android:orientation="vertical" >
 
         <include
+            android:id="@+id/topmenu"
             android:layout_width="482dp"
             android:layout_height="68dp"
             layout="@layout/layout_topmenu" />
+
+	<com.markupartist.android.widget.PullToRefreshListView
+    	android:id="@+id/android:list"
+    	android:layout_height="match_parent"
+    	android:layout_width="match_parent"
+   	/>
 
     </LinearLayout>
 

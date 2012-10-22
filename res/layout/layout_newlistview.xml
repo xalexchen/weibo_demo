@@ -1,0 +1,182 @@
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#FFFFFF" >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/listview_shadow_left"
+                android:layout_width="20dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/bg_shadow_left" />
+
+            <ImageView
+                android:id="@+id/listview_shadow_right"
+                android:layout_width="20dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bg_shadow_right" />
+
+            <ImageView
+                android:id="@+id/listview_bg"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="#ffffff" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+
+
+                    <ImageView
+                        android:id="@+id/listview_user_bg_profile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bg_profile_intro" />
+
+
+                    <TextView
+                        android:id="@+id/listview_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/listview_user_bg_profile"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/listview_user_bg_profile"
+                        android:text="一日一句英文"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/home_color"
+                        android:textSize="15sp" />
+
+
+
+                    <TextView
+                        android:id="@+id/listview_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/listview_user"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/listview_user"
+                        android:layout_marginRight="50dp"
+                        android:maxLength="140"
+                        android:text="在Android开发过程中，经常需要改变控件的默认样式， 那么通常会使用多个图片来解决。不过这种方式可能需要多个图片，比如一个按钮，需要点击时的式样图片，默认的式样图片。 这样就容易使apk变大。"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/home_color"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/listview_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/listview_content"
+                        android:layout_below="@+id/listview_content"
+                        android:layout_marginRight="50dp"
+                        android:text="10-20 09:33 来自专业版微博"
+                        android:textColor="@color/home_color"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout1"
+                android:background="@drawable/bg_status_quote_nor"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="834dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:orientation="vertical" >
+
+
+
+                    <TextView
+                        android:id="@+id/listview_repost_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="中国电影协会"
+                        android:textSize="12sp" />
+
+
+
+
+
+                    <TextView
+                        android:id="@+id/listview_repost_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:maxLength="140"
+                        android:text="教大家如何注册申请美国区（或别的地区）Apple ID的方法已经很多了，而对于有些已经注册了中国区的朋友，不希望修改Apple ID账户但想把地区改到美国区或者别的区，这个方法就用得到了。教大家如何注册申请美国区（或别的地区）Apple ID的方法已经很多了，而对于有些已经注册了中国区的朋友，不希望修改Apple ID账户但想把地区改到美国区或者别的区，这个方法就用得到了。教大家如何注册申请美国区（或别的地区）Apple ID的方法已经很多了，而对于有些已经注册了中国区的朋友，不希望修改Apple ID账户但想把地区改到美国区或者别的区，这个方法就用得到了。教大家如何注册申请美国区（或别的地区）Apple ID的方法已经很多了，而对于有些已经注册了中国区的朋友，不希望修改Apple ID账户但想把地区改到美国区或者别的区，这个方法就用得到了。"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/home_color"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/linearLayout3"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/linearLayout3"
+                    android:orientation="vertical" >
+
+
+
+
+
+                    <ImageView
+                        android:id="@+id/listview_repost_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|bottom"
+                        android:src="@drawable/ic_status_photo_loading_nor" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </FrameLayout>
