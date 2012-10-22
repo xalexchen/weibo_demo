@@ -10,8 +10,7 @@ import android.widget.ImageView;
 
 
 public class AsyncImageLoader {
-
-	 //SoftReference�������ã���Ϊ�˸�õ�Ϊ��ϵͳ���ձ���
+	
     private static HashMap<String, SoftReference<Drawable>> imageCache;
     
     static {
@@ -27,9 +26,7 @@ public class AsyncImageLoader {
             //�ӻ����л�ȡ
             SoftReference<Drawable> softReference = imageCache.get(imageUrl);
             Drawable drawable = softReference.get();
-            System.out.println("111111111111111111111111111111");
             if (drawable != null) {
-            	 System.out.println("11111111111122222222211111111111111111");
                 return drawable;
             }
         }
@@ -42,7 +39,6 @@ public class AsyncImageLoader {
         new Thread() {
             @Override
             public void run() {
-            	System.out.println("11111111111133333333333211111111111111111");
                 Drawable drawable = null;
 				try {
 					drawable = ImageUtil.geRoundDrawableFromUrl(imageUrl, 20);
