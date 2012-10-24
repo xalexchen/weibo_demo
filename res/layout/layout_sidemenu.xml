@@ -6,65 +6,65 @@
     android1:clickable="true" >
 
     <ImageView
-        android1:id="@+id/imageView1"
+        android1:id="@+id/sidemenu_home"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
         android1:layout_alignParentLeft="true"
-        android1:layout_below="@+id/imageView11"
+        android1:layout_below="@+id/sidemenu_bg_profile_intro"
         android1:layout_marginTop="50dp"
         android1:clickable="true"
         android1:src="@drawable/ic_tab_home_nor" />
 
     <ImageView
-        android1:id="@+id/imageView2"
+        android1:id="@+id/sidemenu_at"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
-        android1:layout_alignLeft="@+id/imageView1"
-        android1:layout_below="@+id/imageView1"
+        android1:layout_alignLeft="@+id/sidemenu_home"
+        android1:layout_below="@+id/sidemenu_home"
         android1:src="@drawable/ic_tab_at_nor" />
 
     <ImageView
-        android1:id="@+id/imageView3"
+        android1:id="@+id/sidemenu_comment"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
-        android1:layout_alignRight="@+id/imageView2"
-        android1:layout_below="@+id/imageView2"
+        android1:layout_alignRight="@+id/sidemenu_at"
+        android1:layout_below="@+id/sidemenu_at"
         android1:src="@drawable/ic_tab_comment_nor" />
 
     <ImageView
-        android1:id="@+id/imageView4"
+        android1:id="@+id/sidemenu_message"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
-        android1:layout_alignRight="@+id/imageView3"
-        android1:layout_below="@+id/imageView3"
+        android1:layout_alignRight="@+id/sidemenu_comment"
+        android1:layout_below="@+id/sidemenu_comment"
         android1:src="@drawable/ic_tab_message_nor" />
 
     <ImageView
-        android1:id="@+id/imageView5"
+        android1:id="@+id/sidemenu_info"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
-        android1:layout_alignRight="@+id/imageView4"
-        android1:layout_below="@+id/imageView4"
+        android1:layout_alignRight="@+id/sidemenu_message"
+        android1:layout_below="@+id/sidemenu_message"
         android1:src="@drawable/ic_tab_info_nor" />
 
     <ImageView
-        android1:id="@+id/imageView6"
+        android1:id="@+id/sidemenu_topic"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
-        android1:layout_alignLeft="@+id/imageView5"
-        android1:layout_below="@+id/imageView5"
+        android1:layout_alignLeft="@+id/sidemenu_info"
+        android1:layout_below="@+id/sidemenu_info"
         android1:src="@drawable/ic_tab_topic_nor" />
 
     <ImageView
-        android1:id="@+id/imageView7"
+        android1:id="@+id/sidemenu_plaza"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
-        android1:layout_alignRight="@+id/imageView6"
-        android1:layout_below="@+id/imageView6"
+        android1:layout_alignRight="@+id/sidemenu_topic"
+        android1:layout_below="@+id/sidemenu_topic"
         android1:src="@drawable/ic_tab_plaza_nor" />
 
     <ImageView
-        android1:id="@+id/imageView9"
+        android1:id="@+id/sidemenu_setting"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
         android1:layout_alignLeft="@+id/imageView7"
@@ -73,28 +73,29 @@
         android1:src="@drawable/ic_tab_setting_nor" />
 
     <ImageView
-        android1:id="@+id/imageView10"
+        android1:id="@+id/sidemenu_compose"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
-        android1:layout_above="@+id/imageView9"
-        android1:layout_alignLeft="@+id/imageView9"
+        android1:layout_above="@+id/sidemenu_setting"
+        android1:layout_alignLeft="@+id/sidemenu_setting"
         android1:src="@drawable/ic_tab_compose_nor" />
 
     <ImageView
-        android1:id="@+id/imageView8"
+        android1:id="@+id/sidemenu_refresh"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
-        android1:layout_above="@+id/imageView10"
-        android1:layout_alignLeft="@+id/imageView10"
+        android1:layout_above="@+id/sidemenu_compose"
+        android1:layout_alignLeft="@+id/sidemenu_compose"
         android1:src="@drawable/ic_tab_refresh_nor" />
 
     <ImageView
-        android1:id="@+id/imageView11"
+        android1:id="@+id/sidemenu_bg_profile_intro"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
         android1:layout_alignParentLeft="true"
         android1:layout_alignParentTop="true"
         android1:layout_alignRight="@+id/imageView1"
+        android1:layout_marginLeft="5dp"
         android1:layout_marginTop="10dp"
         android1:src="@drawable/bg_profile_intro" />
 

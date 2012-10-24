@@ -22,19 +22,13 @@
                 android:layout_height="fill_parent"
                 android:layout_alignParentRight="true"
                 android:background="@drawable/bg_shadow_right" />
-
-            <ImageView
-                android:id="@+id/listview_bg"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:src="#ffffff" />
-
+
             <LinearLayout
                 android:id="@+id/linearLayout1"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -93,6 +87,46 @@
                         android:text="10-20 09:33 来自专业版微博"
                         android:textColor="@color/home_color"
                         android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/listview_comment_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/listview_content"
+                        android:layout_alignRight="@+id/listview_content"
+                        android:layout_alignTop="@+id/listview_user"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/home_color"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/listview_comment_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/listview_content"
+                        android:layout_alignTop="@+id/listview_user_bg_profile"
+                        android:layout_toLeftOf="@+id/listview_comment_text"
+                        android:src="@drawable/ic_status_comment_nor" />
+
+                    <TextView
+                        android:id="@+id/listview_forward_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/listview_user"
+                        android:layout_toLeftOf="@+id/listview_comment_img"
+                        android:gravity="center"
+                        android:text="2" />
+
+                    <ImageView
+                        android:id="@+id/listview_forward_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/listview_content"
+                        android:layout_alignTop="@+id/listview_comment_img"
+                        android:layout_toLeftOf="@+id/listview_forward_text"
+                        android:src="@drawable/ic_status_forward_nor" />
 
                 </RelativeLayout>
             </LinearLayout>

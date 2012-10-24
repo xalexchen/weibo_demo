@@ -73,16 +73,26 @@ public class MainScreen extends ListActivity implements RequestListener{
         listItem = new ArrayList<HashMap<String, Object>>();
 		mAdapter = new new_adapter(this,listItem,R.layout.layout_newlistview,
 				new String[]{
-				"listview_user_bg_profile","listview_user","listview_content",
-				"listview_comment_text","listview_content_text","listview_info",
-				"listview_repost_user","listview_repost_content","listview_shadow_left",
-				"listview_shadow_right","listview_bg"
+				"profile_image","screen_name",
+				"forward_img","reposts_count","comment_img","comments_count",
+				"text",
+				"created_at",
+				"repost_user",
+				"repost_content",
+				
+				"listview_shadow_left",
+				"listview_shadow_right"
 				},
 				new int[]{
-				R.id.listview_user_bg_profile,R.id.listview_user,R.id.listview_content,
-				R.id.listview_comment_text,R.id.listview_content_text,R.id.listview_info,
-				R.id.listview_repost_user,R.id.listview_repost_content,R.id.listview_shadow_left,
-				R.id.listview_shadow_right,R.id.listview_bg
+				R.id.listview_user_bg_profile,R.id.listview_user,
+				R.id.listview_forward_img,R.id.listview_forward_text,R.id.listview_comment_img,R.id.listview_comment_text,
+				R.id.listview_content,
+				R.id.listview_info,
+				R.id.listview_repost_user,
+				R.id.listview_repost_content,
+				
+				R.id.listview_shadow_left,
+				R.id.listview_shadow_right
 				});
         setListAdapter(mAdapter);
         
@@ -189,12 +199,16 @@ public class MainScreen extends ListActivity implements RequestListener{
 					Log.i(TAG,"reposts_count: "+child.getString("reposts_count"));
 					//put into listview
 
-					map.put("listview_content", child.getString("text"));
-					map.put("listview_forward_text", child.getString("reposts_count"));
-					map.put("listview_comment_text", child.getString("comments_count"));
-					map.put("listview_shadow_left",R.id.listview_shadow_left);
-					map.put("listview_shadow_right", R.id.listview_shadow_right);
-					map.put("listview_bg",R.id.listview_bg);
+					map.put("text", child.getString("text"));
+					map.put("reposts_count", child.getString("reposts_count"));
+					map.put("comments_count", child.getString("comments_count"));
+					map.put("forward_img",R.drawable.ic_status_forward_nor);
+					map.put("comment_img", R.drawable.ic_status_comment_nor);
+					
+					
+					map.put("listview_shadow_left",R.drawable.bg_shadow_left);
+					map.put("listview_shadow_right",R.drawable.bg_shadow_right);
+					map.put("listview_bg","#FFFFFF");
 					
 				} catch (JSONException e2) {
 					// TODO Auto-generated catch block
@@ -213,10 +227,12 @@ public class MainScreen extends ListActivity implements RequestListener{
 					JSONObject user;
 					try {
 						user = new JSONObject(user1);
-						Log.i(TAG,"listview_user_bg_profile: "+user.getString("profile_image_url"));
+						Log.i(TAG,"profile_image: "+user.getString("profile_image_url"));
 						Log.i(TAG,"screen_name: "+user.getString("screen_name"));
-						map.put("listview_user", user.getString("screen_name"));
-						map.put("listview_user_bg_profile", user.getString("profile_image_url"));
+						map.put("screen_name", user.getString("screen_name"));
+						map.put("profile_image", user.getString("profile_image_url"));
+//						map.put("profile_image", R.drawable.bg_profile_intro);
+						
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -242,15 +258,15 @@ public class MainScreen extends ListActivity implements RequestListener{
 						catch(Exception e){
 							System.out.println("Exception: " + e.getMessage());
 						}
-						map.put("listview_info",date+"  来自: "+Html.fromHtml(child.getString("source")));
-						map.put("listview_repost_content", retweeted_status_obj.getString("text"));
+						map.put("created_at",date+"  来自: "+Html.fromHtml(child.getString("source")));
+						map.put("repost_content", retweeted_status_obj.getString("text"));
 	        	
 						String user2 = retweeted_status_obj.getString("user");
 						if (user2 != null)
 						{
 							JSONObject user3 = new JSONObject(user2);
 							Log.i(TAG,"user3: "+user3.getString("name"));
-							map.put("listview_repost_user", user3.getString("name"));
+							map.put("repost_user", user3.getString("name"));
 						}
 					}
 				} catch (Exception e1) {

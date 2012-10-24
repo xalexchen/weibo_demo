@@ -29,8 +29,17 @@ public class new_adapter extends SimpleAdapter {
 		// TODO Auto-generated constructor stub
 	}
 	@Override
+    public void setViewImage(ImageView v, int value) {
+    	Log.v("TAG","value2222222 = " + value);
+        v.setImageResource(value);
+    }
+	@Override
     public void setViewImage(ImageView v, String value) {
 		super.setViewImage(v, value);
+		
+		Log.v("TAG","value = " + value);
+		if (value.startsWith("http:"))
+		{
 		AsyncImageLoader asyncImageLoader = new AsyncImageLoader();
 		Drawable cachedImage = asyncImageLoader.loadDrawable(value,v, new ImageCallback(){
             
@@ -43,6 +52,7 @@ public class new_adapter extends SimpleAdapter {
 			v.setImageResource(R.drawable.bg_profile_intro);
 		} else {
 			v.setImageDrawable(cachedImage);
+		}
 		}
 		
 //		URL url;
